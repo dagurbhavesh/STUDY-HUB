@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>StudyHub</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                S
+            </div>
+
+            <div>
+
+                <h2>
+                    Study<span>Hub</span>
+                </h2>
+
+                <p>
+                    Focus. Learn. Grow.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <button
+                class="nav-item active"
+                data-section="dashboard"
+            >
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-section="tasks"
+            >
+                <span>✓</span>
+                Tasks
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-section="notes"
+            >
+                <span>📝</span>
+                Notes
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-section="focus"
+            >
+                <span>⏱</span>
+                Focus Timer
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="mini-card">
+
+                <span>🔥</span>
+
+                <div>
+
+                    <strong id="sidebarStreak">
+                        0 Days
+                    </strong>
+
+                    <small>
+                        Study streak
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="themeToggle"
+                class="theme-btn"
+            >
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="small-text">
+                    Good to see you 👋
+                </p>
+
+                <h1>
+                    Welcome back, Student!
+                </h1>
+
+            </div>
+
+
+            <div class="date-box">
+
+                <span>📅</span>
+
+                <div>
+
+                    <strong id="currentDate">
+                        Today
+                    </strong>
+
+                    <small>
+                        Keep learning!
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             DASHBOARD
+        ========================== -->
+
+        <section
+            id="dashboard"
+            class="section active-section"
+        >
+
+
+            <!-- HERO -->
+
+            <div class="hero">
+
+                <div class="hero-content">
+
+                    <span class="badge">
+                        ✨ YOUR LEARNING SPACE
+                    </span>
+
+                    <h2>
+                        Turn your goals into
+                        <span>progress.</span>
+                    </h2>
+
+                    <p>
+                        Stay organized, focus better and
+                        make every study session count.
+                    </p>
+
+
+                    <button
+                        class="primary-btn"
+                        data-go="tasks"
+                    >
+                        Start Studying →
+                    </button>
+
+                </div>
+
+
+                <div class="hero-orb">
+                    🚀
+                </div>
+
+            </div>
+
+
+
+            <!-- STATS -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Tasks Completed
+                        </span>
+
+                        <strong id="completedCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Tasks Remaining
+                        </span>
+
+                        <strong id="remainingCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        🔥
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Study Streak
+                        </span>
+
+                        <strong id="streakCount">
+                            0 days
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ⏱
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Focus Sessions
+                        </span>
+
+                        <strong id="sessionCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 SMART PLAN
+            ========================== -->
+
+            <div class="smart-plan-card">
+
+                <div class="smart-plan-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            SMART PLANNER
+                        </span>
+
+                        <h3>
+                            📚 Today's Study Plan
+                        </h3>
+
+                        <p>
+                            Choose a subject and get a
+                            ready-made study plan.
+                        </p>
+
+                    </div>
+
+
+                    <div class="plan-badge">
+                        ✨ Smart
+                    </div>
+
+                </div>
+
+
+                <div class="plan-controls">
+
+                    <select id="subjectSelect">
+
+                        <option value="dsa">
+                            🧠 DSA
+                        </option>
+
+                        <option value="java">
+                            ☕ Java
+                        </option>
+
+                        <option value="python">
+                            🐍 Python
+                        </option>
+
+                        <option value="web">
+                            🌐 Web Development
+                        </option>
+
+                    </select>
+
+
+                    <button
+                        id="loadPlanBtn"
+                        class="secondary-btn"
+                    >
+                        View Plan
+                    </button>
+
+
+                    <button
+                        id="addPlanBtn"
+                        class="primary-btn"
+                    >
+                        + Add Today's Plan
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="studyPlan"
+                    class="study-plan"
+                ></div>
+
+            </div>
+
+
+
+            <!-- DASHBOARD GRID -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- TASK PREVIEW -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                TODAY
+                            </span>
+
+                            <h3>
+                                Today's Tasks
+                            </h3>
+
+                        </div>
+
+
+                        <button
+                            class="text-btn"
+                            data-go="tasks"
+                        >
+                            View all →
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="dashboardTasks"
+                        class="task-preview"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- PROGRESS -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                YOUR GOALS
+                            </span>
+
+                            <h3>
+                                Learning Progress
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-list" id="learningProgress">
+    <div class="progress-row">
+        <div class="progress-info">
+            <span>JavaScript</span>
+            <strong id="progress-javascript-value">0%</strong>
+        </div>
+        <div class="progress-bar">
+            <div id="progress-javascript-bar" style="width:0%"></div>
+        </div>
+    </div>
+
+    <div class="progress-row">
+        <div class="progress-info">
+            <span>DSA</span>
+            <strong id="progress-dsa-value">0%</strong>
+        </div>
+        <div class="progress-bar">
+            <div id="progress-dsa-bar" style="width:0%"></div>
+        </div>
+    </div>
+
+    <div class="progress-row">
+        <div class="progress-info">
+            <span>Python</span>
+            <strong id="progress-python-value">0%</strong>
+        </div>
+        <div class="progress-bar">
+            <div id="progress-python-bar" style="width:0%"></div>
+        </div>
+    </div>
+
+    <div class="progress-row">
+        <div class="progress-info">
+            <span>React</span>
+            <strong id="progress-react-value">0%</strong>
+        </div>
+        <div class="progress-bar">
+            <div id="progress-react-bar" style="width:0%"></div>
+        </div>
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             TASKS
+        ========================== -->
+
+        <section
+            id="tasks"
+            class="section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        PRODUCTIVITY
+                    </span>
+
+                    <h2>
+                        My Tasks
+                    </h2>
+
+                    <p>
+                        Turn your plans into action.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="task-input-card">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What do you want to accomplish?"
+                >
+
+
+                <select id="taskSubject">
+    <option value="dsa">🧠 DSA</option>
+    <option value="java">☕ Java</option>
+    <option value="python">🐍 Python</option>
+    <option value="web">🌐 Web Development</option>
+</select>
+
+<select id="prioritySelect">
+
+                    <option value="low">
+                        Low Priority
+                    </option>
+
+                    <option
+                        value="medium"
+                        selected
+                    >
+                        Medium Priority
+                    </option>
+
+                    <option value="high">
+                        High Priority
+                    </option>
+
+                </select>
+
+
+                <button
+                    id="addTaskBtn"
+                    class="primary-btn"
+                >
+                    + Add Task
+                </button>
+
+            </div>
+
+
+            <div
+                id="taskList"
+                class="task-list"
+            ></div>
+
+        </section>
+
+
+
+        <!-- =========================
+             NOTES
+        ========================== -->
+
+        <section
+            id="notes"
+            class="section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        KNOWLEDGE
+                    </span>
+
+                    <h2>
+                        My Notes
+                    </h2>
+
+                    <p>
+                        Save important things you learn.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="notes-layout">
+
+
+                <div class="card note-editor">
+
+                    <input
+                        type="text"
+                        id="noteTitle"
+                        placeholder="Note title..."
+                    >
+
+
+                    <textarea
+                        id="noteContent"
+                        placeholder="Write your thoughts here..."
+                    ></textarea>
+
+
+                    <button
+                        id="saveNoteBtn"
+                        class="primary-btn"
+                    >
+                        Save Note
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="notesList"
+                    class="notes-list"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FOCUS TIMER
+        ========================== -->
+
+        <section id="focus" class="section">
+
+            <div class="section-heading center-heading">
+                <div>
+                    <span class="eyebrow">DEEP WORK</span>
+                    <h2>Focus Timer</h2>
+                    <p id="timerSubtitle">25 minutes of focused work.</p>
+                </div>
+            </div>
+
+            <div class="timer-card">
+
+                <div class="timer-settings">
+                    <p class="timer-label">Choose your focus time</p>
+
+                    <div class="timer-presets">
+                        <button class="timer-preset active" data-minutes="25">25 min</button>
+                        <button class="timer-preset" data-minutes="45">45 min</button>
+                        <button class="timer-preset" data-minutes="60">60 min</button>
+                    </div>
+
+                    <div class="custom-timer">
+                        <input type="number" id="customMinutes" min="1" max="180"
+                               placeholder="Custom minutes">
+                        <button id="setCustomTimer" class="secondary-btn">Set</button>
+                    </div>
+                </div>
+
+                <div class="timer-circle">
+                    <div>
+                        <span id="timer">25:00</span>
+                        <small>FOCUS</small>
+                    </div>
+                </div>
+
+                <div class="timer-buttons">
+                    <button id="startTimer" class="primary-btn">▶ Start</button>
+                    <button id="resetTimer" class="secondary-btn">↻ Reset</button>
+                </div>
+
+                <p class="timer-tip">
+                    📵 Put distractions away and focus on one thing.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         AI ASSISTANT
+    ========================== -->
+
+
+    <button
+        id="aiButton"
+        class="ai-floating-btn"
+        title="StudyHub AI"
+    >
+        🤖
+    </button>
+
+
+    <div
+        id="aiPanel"
+        class="ai-panel"
+    >
+
+
+        <!-- AI HEADER -->
+
+        <div class="ai-header">
+
+            <div>
+
+                <strong>
+                    StudyHub AI
+                </strong>
+
+                <small>
+                    Your personal study assistant
+                </small>
+
+            </div>
+
+
+            <button
+                id="closeAI"
+                class="ai-close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <!-- AI MESSAGES -->
+
+        <div
+            id="aiMessages"
+            class="ai-messages"
+        >
+
+            <div class="ai-message bot">
+
+                👋 Hi! I'm your StudyHub AI.
+
+                <br><br>
+
+                You can ask me things like:
+
+                <br>
+                • Explain DSA
+                <br>
+                • Give me a Java quiz
+                <br>
+                • Make a study plan
+                <br>
+                • Debug my code
+
+            </div>
+
+        </div>
+
+
+
+        <!-- AI INPUT -->
+
+        <div class="ai-input-area">
+
+            <input
+                type="text"
+                id="aiInput"
+                placeholder="Ask StudyHub AI..."
+            >
+
+
+            <button
+                id="sendAI"
+            >
+                ➤
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+
+    <div
+        id="toast"
+        class="toast"
+    >
+
+        <span>
+            ✓
+        </span>
+
+        <p>
+            Done!
+        </p>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
